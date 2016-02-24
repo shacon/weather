@@ -2,7 +2,6 @@ from flask import Flask
 import urllib2
 import json
 import datetime
-import unittest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
@@ -130,15 +129,6 @@ def create_forecasts(weather_list):
 @app.teardown_appcontext
 def shutdown_session(exception=None):
     db_session.remove()
-
-
-# class TestHelperMethods(unittest.TestCase):
-
-#   def test_create_forecasts(self):
-#     weather_list = []
-#     list_of_forecasts = []
-#     self.assertEqual(create_forecasts([]).upper(), 'FOO')
-
 
 
 
