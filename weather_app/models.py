@@ -21,15 +21,3 @@ class Forecast(Base):
     locale_id = Column(Integer, ForeignKey('locale.zip_code'))
     locale = relationship("Locale", backref=backref("forecasts", order_by=id))
 
-
-
-# from sqlalchemy import create_engine
-# from sqlalchemy.orm import scoped_session, sessionmaker
-# from sqlalchemy.ext.declarative import declarative_base
-
-
-# def init_db():
-
-#     Base.metadata.create_all(bind=engine)
-
-# init_db()
